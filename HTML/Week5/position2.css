@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    place-content: center;
+    place-items: center;
+}
+
+.card-prf{
+    width: 750px;
+    height: 650px;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 0 rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: relative;
+}
+
+.card-prf .bg-cv{
+    width: 100%;
+    height: 75%;
+    border-radius: 20px 20px 0px 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://cloudfront-us-east-2.images.arcpublishing.com/reuters/DMAPEKOACJMRXGVMXGP2CZLWWU.jpg);
+}
+
+.card-prf .box-prf{
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
+}
+
+.card-prf .box-prf .prf{
+    width: 180px;
+    height: 180px;
+    background-color: aquamarine;
+    border-radius: 50%;
+}
+
+.card-prf .box-prf .prf img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid white;
+}
+
+.card-prf .box-prf .prf .icon{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(219, 213, 213, 0.835);
+    border-radius: 50%;
+    padding: 5px 5px;
+    position: absolute;
+    border: 1px solid white;
+    right: 8%;
+    bottom: 6%;
+}
+.name h2{
+    position: absolute;
+    top: 75%;
+    left: 640px;
+}
+.name .nickname{
+    color: gray;
+}
+.fri{
+    color: rgb(30, 29, 29);
+    top: 75%;
+    position: absolute;
+    left: 640px;
+}
+.fri{
+    position: absolute;
+    top: 80%;
+    color: rgba(125, 123, 123, 0.801);
+}
+.action-but{
+    border: none;
+    padding: 5 15px;
+    height: 50px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+}
+.btn-st{
+    background-color: blue;
+    color: white;
+}
+.btn-edt-pf{
+    background-color: rgb(102, 101, 101);
+    color: white;
+    display: flex;
+}
+

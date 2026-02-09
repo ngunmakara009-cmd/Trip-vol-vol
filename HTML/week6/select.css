@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 70vw;
+    overflow: hidden;
+    padding: 20px;
+    margin: auto;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    & header, footer {
+        width: 100%;
+        text-align: center;
+        place-content: center;
+        font-size: 1.5rem;
+        padding: 15px;
+        background-color: rgb(14, 231, 159);
+    }
+
+    & main {
+        display: flex;
+        width: 100%;
+        gap: 20px;
+        font-size: 1.5rem;
+
+        & aside {
+            width: 30%;
+            height: 300px;
+            background-color: rgb(56, 169, 169);
+            text-align: center;
+            place-content: center;
+        }
+
+        & article {
+            width: 70%;
+            height: 300px;
+            background-color: rgb(220, 56, 56);
+            display: flex;
+            flex-direction: column;
+
+            & div {
+                width: 100%;
+                height: 55%;
+                text-align: center;
+                place-content: end;
+            }
+
+            & .wrapper {
+                width: 100%;
+                height: 45%;
+                display: flex;
+                padding: 10px;
+                gap: 10px;
+
+                & div {
+                    background-color: rgb(188, 186, 186);
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    place-content: center;
+                }
+            }
+        }
+    }
+}

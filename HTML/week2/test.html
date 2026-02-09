@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iPhone Store</title>
+
+    <!-- Font Awesome for Buy Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: black;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background: white;
+            width: 250px;
+            border-radius: 10px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+        }
+
+        .price {
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .buy-btn i {
+            margin-right: 5px;
+        }
+
+        .buy-btn:hover {
+            background: #444;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📱 iPhone Store</h1>
+    <p>Best iPhones – Best Price</p>
+</header>
+
+<div class="container">
+
+    <div class="product">
+        <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-model-unselect-gallery-1-202309?wid=512&hei=512" alt="iPhone 15 Pro">
+        <h3>iPhone 15 Pro</h3>
+        <p class="price">$999</p>
+        <a href="#" class="buy-btn">
+            <i class="fa-solid fa-cart-shopping"></i> Buy Now
+        </a>
+    </div>
+
+    <div class="product">
+        <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-model-unselect-gallery-1-202209?wid=512&hei=512" alt="iPhone 14">
+        <h3>iPhone 14</h3>
+        <p class="price">$799</p>
+        <a href="#" class="buy-btn">
+            <i class="fa-solid fa-cart-shopping"></i> Buy Now
+        </a>
+    </div>
+
+    <div class="product">
+        <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-green-select-202203?wid=512&hei=512" alt="iPhone 13">
+        <h3>iPhone 13</h3>
+        <p class="price">$699</p>
+        <a href="#" class="buy-btn">
+            <i class="fa-solid fa-cart-shopping"></i> Buy Now
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 iPhone Store | All Rights Reserved
+</footer>
+
+</body>
+</html>

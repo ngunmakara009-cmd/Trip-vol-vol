@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Website</title>
+    <style>
+        body {
+            font-family: Arial, 'Khmer OS Battambang', sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+        }
+
+        /* ===== MENU ===== */
+        .menu {
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .menu a {
+            color: red;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ===== MAIN LAYOUT ===== */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            gap: 20px;
+        }
+
+        /* ===== LEFT CONTENT ===== */
+        .content {
+            flex: 3;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .content img {
+            width: 250px;
+            float: right;
+            margin-left: 15px;
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact {
+            margin-top: 30px;
+        }
+
+        .contact h3 {
+            text-align: center;
+        }
+
+        .contact label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .contact button {
+            margin-top: 10px;
+            padding: 8px 20px;
+        }
+
+        /* ===== RIGHT SIDEBAR ===== */
+        .sidebar {
+            flex: 1;
+            background: #fff;
+            padding: 10px;
+        }
+
+        .post {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .post img {
+            width: 100%;
+        }
+
+        .price {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* ===== FOOTER BANNER ===== */
+        .banner {
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .banner img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENU -->
+    <div class="menu">
+        <a href="#">ទំព័រដើម</a>
+        <a href="#">ព័ត៌មាន</a>
+        <a href="#">Tablets</a>
+        <a href="#">ទំនាក់ទំនង</a>
+        <a href="#">អំពីយើង</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <!-- LEFT -->
+        <div class="content">
+            <h3>អត្ថបទព័ត៌មាន</h3>
+            <img src="https://via.placeholder.com/250" alt="Product">
+            <p>
+                នេះជាអត្ថបទពណ៌នាអំពីផលិតផល ឬព័ត៌មានផ្សេងៗ។
+                អ្នកអាចសរសេរអត្ថបទជាភាសាខ្មែរ ឬភាសាអង់គ្លេសបាន។
+            </p>
+
+            <!-- CONTACT FORM -->
+            <div class="contact">
+                <h3>Contact Us</h3>
+                <label>Name</label>
+                <input type="text">
+
+                <label>Email</label>
+                <input type="email">
+
+                <label>Subject</label>
+                <input type="text">
+
+                <label>Message</label>
+                <textarea rows="4"></textarea>
+
+                <button>Submit</button>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="sidebar">
+            <div class="post">
+                <img src="https://via.placeholder.com/200" alt="">
+                <p>ផ្ទះលក់បន្ទាន់</p>
+                <p class="price">$300,000</p>
+            </div>
+
+            <div class="post">
+                <img src="https://via.placeholder.com/200" alt="">
+                <p>ម៉ូតូលក់</p>
+                <p class="price">$2,800</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BANNER -->
+    <div class="banner">
+        <img src="https://via.placeholder.com/1200x150" alt="Banner">
+    </div>
+
+</body>
+</html>

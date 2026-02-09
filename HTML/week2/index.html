@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<title>ហាងលក់ iPhone</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+    background:#f5f5f7;
+}
+header{
+    background:white;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+header h1{
+    font-size:22px;
+}
+.cart-btn{
+    font-size:20px;
+    cursor:pointer;
+}
+.container{
+    padding:25px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+.product{
+    background:white;
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+.product img{
+    width:100%;
+    height:200px;
+    object-fit:contain;
+}
+.product h3{
+    margin:10px 0;
+}
+.price{
+    color:#0071e3;
+    font-weight:bold;
+    font-size:18px;
+}
+.buy-btn{
+    width:100%;
+    padding:10px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+.buy-btn:hover{
+    background:#333;
+}
+
+/* CART */
+.cart{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:320px;
+    height:100%;
+    background:white;
+    padding:15px;
+    transition:.3s;
+    box-shadow:-5px 0 20px rgba(0,0,0,.2);
+    overflow-y:auto;
+}
+.cart.active{
+    right:0;
+}
+.cart h2{
+    text-align:center;
+}
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
+}
+.total{
+    font-weight:bold;
+    margin-top:10px;
+}
+.order{
+    display:block;
+    background:#25D366;
+    color:white;
+    text-align:center;
+    padding:10px;
+    border-radius:8px;
+    margin-top:15px;
+    text-decoration:none;
+}
+footer{
+    text-align:center;
+    padding:15px;
+    color:#777;
+}
+</style>
+</head>
+<body>
+<center>
+         <h1><font face="Khmer M1"​ color="red"><u>ហាងលក់ទូរស័ព្វដៃ iPhone</u></font></h1>
+    </center>
+<header>
+    
+    <div class="cart-btn" onclick="toggleCart()">
+        <i class="fa-solid fa-cart-shopping"></i>
+        (<span id="count">0</span>)
+    </div>
+</header>
+
+<div class="container" id="products"></div>
+
+<!-- CART -->
+<div class="cart" id="cart">
+    <h2>🛒 កន្ត្រក</h2>
+    <div id="cartItems"></div>
+    <p class="total">សរុប: $<span id="total">0</span></p>
+
+    <!-- CHANGE YOUR WHATSAPP NUMBER -->
+    <a id="orderBtn" class="order" target="_blank">
+        📲 ទិញតាម WhatsApp
+    </a>
+</div>
+
+<footer>
+© 2025 iPhone Store Cambodia
+</footer>
+
+<script>
+const products = [
+["iPhone X",299,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-x.jpg"],
+["iPhone XS",349,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-xs.jpg"],
+["iPhone XS Max",399,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-xs-max.jpg"],
+["iPhone 11",449,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-11.jpg"],
+["iPhone 11 Pro",499,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-11-pro.jpg"],
+["iPhone 11 Pro Max",549,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-11-pro.jpg"],
+["iPhone 12",599,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12.jpg"],
+["iPhone 12 Pro",699,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12-pro.jpg"],
+["iPhone 12 Pro Max",749,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12-pro-max.jpg"],
+["iPhone 13",699,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg"],
+["iPhone 13 Pro",799,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro.jpg"],
+["iPhone 13 Pro Max",849,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro-max.jpg"],
+["iPhone 14",799,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14.jpg"],
+["iPhone 14 Pro",899,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14-pro.jpg"],
+["iPhone 14 Pro Max",949,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14-pro.jpg"],
+["iPhone 15 Pro Max",1099,"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-15-pro-max.jpg"],
+["iPhone 17 Pro Max",1399,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP0I_8EQlQmlKBWvAx7ocpAxXxUxsmgfxWDQ&s"]
+];
+
+const productsDiv = document.getElementById("products");
+
+products.forEach(p=>{
+    productsDiv.innerHTML += `
+    <div class="product">
+        <img src="${p[2]}" alt="${p[0]}">
+        <h3>${p[0]}</h3>
+        <p class="price">$${p[1]}</p>
+        <button class="buy-btn" onclick="addToCart('${p[0]}',${p[1]})">
+            ទិញ
+        </button>
+    </div>`;
+});
+
+let cart = [];
+let total = 0;
+
+function toggleCart(){
+    document.getElementById("cart").classList.toggle("active");
+}
+
+function addToCart(name, price){
+    cart.push({name, price});
+    total += price;
+
+    document.getElementById("count").innerText = cart.length;
+    document.getElementById("total").innerText = total;
+
+    const item = document.createElement("div");
+    item.className = "cart-item";
+    item.innerHTML = `<span>${name}</span><span>$${price}</span>`;
+    document.getElementById("cartItems").appendChild(item);
+
+    let msg = "សួស្តី ខ្ញុំចង់ទិញ:%0A";
+    cart.forEach(i=>{
+        msg += "- " + i.name + "%0A";
+    });
+    msg += "សរុប: $" + total;
+
+    document.getElementById("orderBtn").href =
+    "https://wa.me/85512345678?text=" + msg;
+}
+</script>
+
+</body>
+</html>
